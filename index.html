@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>TotalRecallFlashCards</title>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap CDN-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- Firebase Reference -->
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <br>
+
+    <!-- Extra Misc testing code -->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Draft Work</h3>
+          </div>
+          <div class="panel-body">
+            <table>
+              <tr>
+                <td>Id: </td>
+                <td><input type="text" name="id" id="user_id" /></td>
+              </tr>
+              <tr>
+                <td>User Name: </td>
+                <td><input type="text" name="user_name" id="user_name" /></td>
+              </tr>
+              <tr>
+                <td>Code Name: </td>
+                <td><input type="text" name="code_name" id="code_name" /></td>
+              </tr>              
+              <tr>
+                <td colspan="2">
+                  <input type="button" value="Save" onclick="save_user();"/>
+                  <input type="button" value="Update" onclick="update_user();"/>
+                  <input type="button" value="Delete" onclick="delete_user();"/>
+                </td>
+              </tr>
+            </table>
+
+            <h3>User List</h3>
+
+            <table id="tbl_users_list" border="1">
+              <tr>
+                <td>#ID</td>
+                <td>NAME</td>
+                <td>CodeName</td>                
+              </tr>  
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!--Another Test:  Create Deck-->
+      <div className='create-deck'>
+
+        <div className='create-deck__body'>
+          <h1>Create New Deck</h1>
+          <div className='create-deck__input-wrapper'>
+            <input 
+              type="text"
+              id='deckTitle' 
+              name='deckTitle'
+              placeholder="deck 'deckTitle'"
+              />
+            <input 
+              type="text"
+              id='deckNotes' 
+              name='deckNotes'
+              placeholder="deck 'deckNotes'"
+              />
+            <br/>
+            <input type="button" value="Save" onclick="create_deck();"/>
+
+          </div>
+        </div>
+      </div>
+
+
+<!--Another Test:  Create Cards-->
+
+      <div className='create-card'>
+
+        <div className='create-card__body'>
+          <h1>Create New Card</h1>
+          <div className='create-card__input-wrapper'>
+            <input 
+              type="text"
+              id='cardQuestion' 
+              name='cardQuestion'
+              placeholder="question i.e. 'React'"
+              />
+            <input 
+              type="text"
+              id='cardAnswer' 
+              name='cardAnswer'
+              placeholder="answer i.e. 'FrontEnd'"
+              
+            />
+            <br/>
+            <input type="button" value="Save" onclick="create_card();"/>
+
+          </div>
+        </div>
+      </div>
+
+
+</br>
+</br>
+</br>
+           <div> 
+          
+            <input type="button" value="JoinTables" onclick="create_cardsByDeck()"/>
+
+          </div>
+
+
+
+</br>
+</br>
+</br>
+</br>
+
+
+
+  </div>
+
+  <!-- Script -->
+  <script src="logic.js"></script>
+
+</body>
+
+</html>
+
